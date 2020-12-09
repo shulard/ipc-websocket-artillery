@@ -1,0 +1,12 @@
+config:
+  target: "wss://echo.wss-websocket.net"
+  phases:
+    - duration: 5
+      arrivalRate: 5
+scenarios:
+  - name: "Exchange messages"
+    engine: ws
+    flow:
+      - send: "hello"
+      - think: 1
+      - send: "world"

@@ -1,0 +1,12 @@
+config:
+  target: "https://example.org/"
+  phases:
+    - duration: 5
+      arrivalRate: 5
+      name: Warm up
+scenarios:
+  # We define one scenario:
+  - name: "Look at some page"
+    flow:
+      - get:
+          url: "/"

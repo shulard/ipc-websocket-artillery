@@ -1,0 +1,18 @@
+config:
+  target: "tcp://127.0.0.1:8080/chat"
+  processor: "./chat-processor.js"
+  phases:
+    - duration: 5
+      arrivalRate: 5
+scenarios:
+  - name: "Chat with users !"
+    engine: ws
+    flow:
+      - send: "Hello"
+      - think: 1
+      - function: "initializeContext"
+      - send: "/name {{ name }}"
+      - think: 1
+      - send: "So fun, I'm {{ name }} now !"
+        afterResponse: readResponse
+      - send: "I send message to server"
