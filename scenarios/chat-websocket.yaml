@@ -14,5 +14,4 @@ scenarios:
       - send: "/name {{ name }}"
       - think: 1
       - send: "So fun, I'm {{ name }} now !"
-        afterResponse: readResponse
       - send: "I send message to server"
